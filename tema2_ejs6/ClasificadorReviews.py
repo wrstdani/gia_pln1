@@ -34,6 +34,7 @@ poscutoff = int(len(posfeats) * 3 / 4)
 # Generamos los conjuntos sobre los diccionarios positivos y negativos.
 trainfeats = negfeats[:negcutoff] + posfeats[:poscutoff]
 testfeats = negfeats[negcutoff:] + posfeats[poscutoff:]
+print(trainfeats)
 print("Instancias de test: %d sobre: %d instancias de entrenamiento. " % (len(testfeats),len(trainfeats)))
 
 # Entrenamos al clasificador con los conjuntos de entrenamiento.
@@ -44,15 +45,4 @@ print("Precisión:", nltk.classify.util.accuracy(classifier,testfeats))
 
 # Mostramos las características más importantes identificadas por el clasificador.
 # Se muestra la influencia de las palabras más importantes para realizar la clasificación positiva o negativa.
-classifier.show_most_informative_features()
-
-# EJ. 4
-def test_opinion(word_tokenized):
-    for s in word_tokenized:
-        for w in s:
-            
-
-word_tokenized1 = [nltk.tokenize.word_tokenize(s) for s in nltk.tokenize.PunktSentenceTokenizer().tokenize(opinion1)]
-word_tokenized2 = [nltk.tokenize.word_tokenize(s) for s in nltk.tokenize.PunktSentenceTokenizer().tokenize(opinion2)]
-word_tokenized3 = [nltk.tokenize.word_tokenize(s) for s in nltk.tokenize.PunktSentenceTokenizer().tokenize(opinion3)]
-
+classifier.show_most_informative_features() 
