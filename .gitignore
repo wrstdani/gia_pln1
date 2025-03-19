@@ -175,3 +175,6 @@ cython_debug/
 
 *.bin
 *.model
+
+*.virtual_documents
+anaconda_projects
