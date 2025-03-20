@@ -173,8 +173,7 @@ cython_debug/
 # MacOS files
 *.DS_Store
 
-*.bin
-*.model
-
 *.virtual_documents
 anaconda_projects
+
+*models
